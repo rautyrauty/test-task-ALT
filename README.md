@@ -50,7 +50,7 @@ packages json format
 
 Install [Boost C++ Libraries](boost) and [OpenSSL](https://www.openssl.org/)
 
-Overwrite OPENSSL_ROOT_DIR and BOOST_ROOT in [CMakeLists.txt](https://github.com/rautyrauty/multithreaded-anti-family-sharing/blob/main/CMakeLists.txt#L10)
+Overwrite OPENSSL_ROOT_DIR and BOOST_ROOT in [CMakeLists.txt](https://github.com/rautyrauty/test-task-ALT/blob/main/CMakeLists.txt#L10)
 
 ## Usage
 1. Enter the name of the two branches

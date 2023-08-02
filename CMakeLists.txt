@@ -25,7 +25,7 @@ if(WIN32)
     target_link_libraries(MyLib ws2_32)
 endif()
 target_link_libraries(MyLib ${Boost_LIBRARIES})
-target_link_libraries(MyLib ${CMAKE_DL_LIBS} "${OPENSSL_ROOT_DIR}/lib/libcrypto.lib" "${OPENSSL_ROOT_DIR}/lib/libssl.lib")
+target_link_libraries(MyLib ${CMAKE_DL_LIBS} OpenSSL::SSL OpenSSL::Crypto)
 
 add_executable(main main.cpp)
 target_link_libraries(main PUBLIC MyLib)
