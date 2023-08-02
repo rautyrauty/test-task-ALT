@@ -35,12 +35,12 @@ endif()
 add_library(MyLib SHARED)
 target_sources(MyLib PRIVATE lib.cpp lib.hpp json.hpp)
 
-message(STATUS "Boost include dir: ${Boost_INCLUDE_DIR}")
 FIND_PACKAGE( Boost REQUIRED)
+message(STATUS "Boost include dir: ${Boost_INCLUDE_DIR}")
 INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
 
-message(STATUS "OpenSSL include dir ${OPENSSL_INCLUDE_DIR}")
 find_package(OpenSSL REQUIRED)
+message(STATUS "OpenSSL include dir ${OPENSSL_INCLUDE_DIR}")
 include_directories(${OPENSSL_INCLUDE_DIR})
 
 if(WIN32)
