@@ -46,11 +46,33 @@ packages json format
 ```
 
 
-## Preparation for Build
+## Build Linux(Ubuntu 22.04.2)
 
-Install [Boost C++ Libraries](boost) and [OpenSSL](https://www.openssl.org/)
+0. Install [CMake](https://cmake.org/)
 
-Overwrite OPENSSL_ROOT_DIR and BOOST_ROOT in [CMakeLists.txt](https://github.com/rautyrauty/test-task-ALT/blob/main/CMakeLists.txt#L10)
+```bash
+sudo apt-get install cmake
+```
+
+1. Install [Boost C++ Libraries](boost) and [OpenSSL](https://www.openssl.org/)
+
+```bash
+sudo apt-get install libboost-all-dev
+sudo apt-get install libssl-dev
+```
+
+2. Build
+```
+cd [root-directory-of-project]
+cmake .
+cmake --build ./
+```
+If OpenSSL or Boost is installed in a non-standard location u can overwrite OPENSSL_ROOT_DIR and BOOST_ROOT in CMakeLists.txt or just
+```
+set OPENSSL_ROOT_DIR=some_dir
+set BOOST_ROOT=some_dir
+```
+
 
 ## Usage
 1. Enter the name of the two branches
