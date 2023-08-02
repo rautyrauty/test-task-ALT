@@ -34,9 +34,10 @@ nlohmann::json GetBranchesALTDiff(const std::string first_b,const std::string se
     using namespace nlohmann;
 
     json first  = GetBranchALT(first_b);
-    json second = GetBranchALT(second_b);
+    std::cout << "Branch " << first_b  << " loaded\n";
 
-    std::cout << "Branches parsed\n";
+    json second = GetBranchALT(second_b);
+    std::cout << "Branch " << second_b << " loaded\n";
 
     json answer = json::parse(R"(
                                   {
@@ -67,7 +68,6 @@ nlohmann::json GetBranchesALTDiff(const std::string first_b,const std::string se
     {
         if (first["packages"][i]["name"] < second["packages"][k]["name"])
         {
-            std::cout << "first " << first["packages"][i]["name"] << '\n';
             push_package("only_in_first", first["packages"][i]);
             i += 1;
         }
