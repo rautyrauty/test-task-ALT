@@ -1,7 +1,5 @@
 # Test task for ALT
-
-This program compares two branches from [altrepo](https://rdb.altlinux.org/api/) and outputs the result in JSON format in file
-
+This program is a dynamic library and a command line interface that uses this library. It compares two branches from [altrepo](https://rdb.altlinux.org/api/)  and outputs the result in JSON format to a file
 ```json
 {
   "only_in_first":{
