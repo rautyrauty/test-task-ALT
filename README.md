@@ -1,6 +1,6 @@
 # Test task for ALT
 
-This program compares two branches and outputs the result in JSON format in file
+This program compares two branches from [altrepo](https://rdb.altlinux.org/api/) and outputs the result in JSON format in file
 
 ```json
 {
@@ -52,10 +52,15 @@ Install [Boost C++ Libraries](boost) and [OpenSSL](https://www.openssl.org/)
 
 Overwrite OPENSSL_ROOT_DIR and BOOST_ROOT in [CMakeLists.txt](https://github.com/rautyrauty/multithreaded-anti-family-sharing/blob/main/CMakeLists.txt#L10)
 
+## Usage
+1. Enter the name of the two branches
+2. Get the file
+
 ## Credits
 I am grateful to the creators of the following open source libraries:
   - [Boost C++ Libraries](http://www.boost.org/) (Boost Software License)
   - [OpenSSL](https://www.openssl.org/) (Apache License 2.0)
   - [json](https://github.com/nlohmann/json) (MIT License)
+  - [altrepo API v1](https://rdb.altlinux.org/api/) (GNU AGPLv3)
  
- I am grateful to  [company ALT](https://www.basealt.ru/)  for a good test assignment and consideration of my resume :)
+ I am grateful to  [ALT](https://www.basealt.ru/)  for a good test assignment and consideration of my resume :)
