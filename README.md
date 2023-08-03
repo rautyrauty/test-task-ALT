@@ -47,7 +47,7 @@ packages json format
 ```
 
 
-## Build Linux(Ubuntu 22.04.2)
+## Build Linux (ubuntu)
 
 0. Install [CMake](https://cmake.org/)
 
