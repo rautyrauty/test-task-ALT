@@ -2,18 +2,21 @@
 This program is a dynamic library and a command line interface that uses this library. It compares two branches from [altrepo](https://rdb.altlinux.org/api/)  and outputs the result in JSON format to a file
 ```json
 {
-  "only_in_first":{
-    "length": 0,
-    "array": []
+  "arch":{
+    "only_in_first":{
+      "length": 0,
+      "packages": []
+    },
+    "only_in_second":{
+      "length": 0,
+      "packages": []
+    },
+    "in_first_release_greater":{
+      "length": 0,
+      "packages": []
+    }
   },
-  "only_in_second":{
-    "length": 0,
-    "array": []
-  },
-  "in_first_release_greater":{
-    "length": 0,
-    "array": []
-  }
+  ...
 }
 ```
 "only_in_first"  - all packages that are in the 1st but not in the 2nd
