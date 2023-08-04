@@ -47,24 +47,40 @@ packages json format
 ```
 ## Build Linux ALT workstation 10.1
 
-0. Install [CMake](https://cmake.org/)
+0. Install [CMake](https://cmake.org/), g++, git and clone repository
 
-```bash
+```
 sudo apt-get update
+```
+```
+sudo apt-get install gcc-g++
+```
+```
 sudo apt-get install cmake
+```
+```
+sudo apt-get install git
+```
+```
+sudo git clone https://github.com/rautyrauty/test-task-ALT
+
 ```
 
 1. Install [Boost C++ Libraries](boost) and [OpenSSL](https://www.openssl.org/)
 
-```bash
+```
 sudo apt-get install boost-devel
+```
+```
 sudo apt-get install boost-asio-devel
+```
+```
 sudo apt-get install libssl-devel
 ```
 
 2. Build
 ```
-cd [root-directory-of-project]
+cd test-task-ALT
 sudo cmake .
 sudo cmake --build ./
 ```
@@ -75,6 +91,8 @@ sudo cmake --build ./ -DOPENSSL_ROOT_DIR=some_dir -DBOOST_ROOT=some_dir
 to get the paths to boost and openssl, use the "whereis" command:
 ```
 whereis boost
+```
+```
 whereis openssl
 ```
 
