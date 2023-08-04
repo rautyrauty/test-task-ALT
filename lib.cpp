@@ -32,6 +32,11 @@ nlohmann::ordered_json GetApiALT(const std::string& target)
     return nlohmann::ordered_json::parse(res.get().body());
 }
 
+bool VersionIsDate(const std::string& v)
+{
+    return (v.find('.') != std::string::npos);
+}
+
 int VersionReleaseComp(std::string v1, std::string v2)
 {
     auto is_digit = [](const char c){ if (c>='0' and c <='9') return true; else return false;};
@@ -131,10 +136,12 @@ nlohmann::ordered_json GetBranchesAltDiff(const std::string& first_b,const std::
                 continue;
             }
 
-            int res = VersionReleaseComp(first["packages"][i]["version"], second["packages"][k]["version"]);
-            if (res > 0) push_package((*arch_it)["arch"], "in_first_release_greater", first["packages"][i]);
-            else if ((res == 0) and (VersionReleaseComp(first["packages"][i]["release"], second["packages"][k]["release"])>0)) push_package((*arch_it)["arch"], "in_first_release_greater", first["packages"][i]);
-
+            if(VersionIsDate(first["packages"][i]["version"]) == VersionIsDate(second["packages"][k]["version"]))
+            {
+                int res = VersionReleaseComp(first["packages"][i]["version"], second["packages"][k]["version"]);
+                if (res > 0) push_package((*arch_it)["arch"], "in_first_release_greater", first["packages"][i]);
+                else if ((res == 0) and (VersionReleaseComp(first["packages"][i]["release"], second["packages"][k]["release"])>0)) push_package((*arch_it)["arch"], "in_first_release_greater", first["packages"][i]);
+            }
             i+=1;
             k+=1;
         }
