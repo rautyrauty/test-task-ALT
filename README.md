@@ -45,13 +45,45 @@ packages json format
   "source": "string"
 }
 ```
-
-
-## Build Linux (ubuntu)
+## Build Linux ALT workstation 10.1
 
 0. Install [CMake](https://cmake.org/)
 
 ```bash
+sudo apt-get update
+sudo apt-get install cmake
+```
+
+1. Install [Boost C++ Libraries](boost) and [OpenSSL](https://www.openssl.org/)
+
+```bash
+sudo apt-get install boost-devel
+sudo apt-get install boost-asio-devel
+sudo apt-get install libssl-devel
+```
+
+2. Build
+```
+cd [root-directory-of-project]
+sudo cmake .
+sudo cmake --build ./
+```
+If OpenSSL or Boost is installed in a non-standard location you can set options:
+```
+sudo cmake --build ./ -DOPENSSL_ROOT_DIR=some_dir -DBOOST_ROOT=some_dir
+```
+to get the paths to boost and openssl, use the "whereis" command:
+```
+whereis boost
+whereis openssl
+```
+
+## Build Linux Ubuntu 22.04
+
+0. Install [CMake](https://cmake.org/)
+
+```bash
+sudo apt-get update
 sudo apt-get install cmake
 ```
 
@@ -65,13 +97,17 @@ sudo apt-get install libssl-dev
 2. Build
 ```
 cd [root-directory-of-project]
-cmake .
-cmake --build ./
+sudo cmake .
+sudo cmake --build ./
 ```
-If OpenSSL or Boost is installed in a non-standard location u can overwrite OPENSSL_ROOT_DIR and BOOST_ROOT in CMakeLists.txt or just
+If OpenSSL or Boost is installed in a non-standard location you can set options:
 ```
-set OPENSSL_ROOT_DIR=some_dir
-set BOOST_ROOT=some_dir
+sudo cmake --build ./ -DOPENSSL_ROOT_DIR=some_dir -DBOOST_ROOT=some_dir
+```
+to get the paths to boost and openssl, use the "whereis" command:
+```
+whereis boost
+whereis openssl
 ```
 
 
